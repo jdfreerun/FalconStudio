@@ -33,15 +33,15 @@ final class TabBarController: UITabBarController{
         tabBar.layer.borderWidth = 1
         tabBar.layer.masksToBounds = true
         
-        let mainController = UIViewController()
-        let productController = UIViewController()
-        let bidController = UIViewController()
-        let menuController = UIViewController()
+        let mainController = MainViewControoler()
+        let productController = ProductsViewController()
+        let bidController = BidViewController()
+        let menuController = MenuViewController()
         
-        let mainNavigation = UINavigationController(rootViewController: mainController)
-        let productNavigation = UINavigationController(rootViewController: productController)
-        let bidNavigation = UINavigationController(rootViewController: bidController)
-        let menuNavigation = UINavigationController(rootViewController: menuController)
+        let mainNavigation = NavBarController(rootViewController: mainController)
+        let productNavigation = NavBarController(rootViewController: productController)
+        let bidNavigation = NavBarController(rootViewController: bidController)
+        let menuNavigation = NavBarController(rootViewController: menuController)
         
         mainNavigation.tabBarItem = UITabBarItem(title: Resorces.Strings.TabBar.main,
                                                  image: Resorces.Images.TabBar.main,
