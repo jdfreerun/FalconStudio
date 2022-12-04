@@ -9,11 +9,12 @@ import UIKit
 import SwiftUI
 
 class BaseController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addViews()
         layoutViews()
-        configure()
+        configure() 
     }
 }
 @objc extension BaseController {
@@ -22,9 +23,8 @@ class BaseController: UIViewController {
     func configure() {
         view.backgroundColor = Resorces.Colors.background
     }
-    func navBarRightButtonHandler() {
-        print("Нажали на кнопку")
-        //сюда добавить выбор города
+    
+    func navBarSelectCityButtonHandler() {
         let helpView = HelpView()
         let helpVC = UIHostingController(rootView: helpView)
         self.present(helpVC, animated: true)
@@ -38,7 +38,7 @@ extension BaseController {
         button.setTitleColor(UIColor.white, for: .normal)
         button.setTitleColor(UIColor.darkGray, for: .disabled)
         button.titleLabel?.font = Resorces.Fonts.helveticaNeue(with: 16)
-        button.addTarget(self, action: #selector(navBarRightButtonHandler), for: .touchUpInside)
+        button.addTarget(self, action: #selector(navBarSelectCityButtonHandler), for: .touchUpInside)
         button.setImage(Resorces.Images.Common.allCityButton, for: .normal)
         button.semanticContentAttribute = .forceRightToLeft
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)

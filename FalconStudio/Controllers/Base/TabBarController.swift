@@ -26,14 +26,14 @@ final class TabBarController: UITabBarController{
     }
     
     private func configure() {
-        tabBar.tintColor = Resorces.Colors.active
+        tabBar.tintColor = Resorces.Colors.baseColor
         tabBar.barTintColor = Resorces.Colors.inactive
         tabBar.backgroundColor = .white
         tabBar.layer.borderColor = Resorces.Colors.separator.cgColor
         tabBar.layer.borderWidth = 1
         tabBar.layer.masksToBounds = true
         
-        let mainController = MainViewControoler()
+        let mainController = MainViewController()
         let productController = ProductsViewController()
         let bidController = BidViewController()
         let menuController = MenuViewController()
@@ -62,6 +62,5 @@ final class TabBarController: UITabBarController{
             bidNavigation,
             menuNavigation
         ], animated: false)
-        
     }
 }
